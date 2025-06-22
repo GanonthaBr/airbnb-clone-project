@@ -21,6 +21,7 @@ This project is a backend clone of the Airbnb platform, designed to replicate co
 - **Docker** *(optional)* – Containerized development and deployment.
 - **JWT Authentication** – Secure token-based user authentication.
 - **Celery & Redis** *(optional)* – Background task processing (e.g., email notifications).
+- **Redis:** Used for caching and session management.
 - **CI/CD** - Continuous Integration and Continuous Deployment for automated tasks, testing and project deployment
 
 ## 🗃️ Database Design
