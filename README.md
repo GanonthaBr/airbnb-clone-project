@@ -140,3 +140,52 @@ Guests can post and manage reviews about properties using `/reviews/` and `/revi
 ### 🚀 Database Optimizations
 To maintain performance at scale, the backend employs **indexing** for frequently queried data and **caching** to reduce server load and latency. These strategies enhance the responsiveness and reliability of the system.
 
+
+## 🔒 API Security
+
+Security is a critical aspect of backend development, especially when dealing with sensitive user data, financial transactions, and personal property listings. The following measures are implemented to protect the system from unauthorized access and potential threats.
+
+### 🔐 Authentication
+We use **JWT (JSON Web Tokens)** for secure and stateless authentication. Tokens are issued upon login and required for accessing protected endpoints. This ensures that only verified users can interact with the system.
+
+**Why it matters:** Prevents unauthorized access to user accounts and personal data.
+
+---
+
+### 🛡️ Authorization
+Role-based access control (RBAC) is applied to restrict actions based on user roles (e.g., host vs. guest). For example, only a host can create or manage property listings.
+
+**Why it matters:** Ensures users can only perform actions they are permitted to, preventing data tampering or misuse.
+
+---
+
+### 🚦 Rate Limiting
+Rate limiting is implemented to control the number of requests a user or IP can make in a given timeframe. This helps mitigate brute-force attacks, spam, and abuse of resources.
+
+**Why it matters:** Protects the server from being overwhelmed and helps prevent denial-of-service (DoS) attacks.
+
+---
+
+### 🧬 Input Validation & Data Sanitization
+All user inputs are validated and sanitized to prevent SQL injection, XSS (cross-site scripting), and other injection-based attacks.
+
+**Why it matters:** Protects the integrity of the application and database.
+
+---
+
+### 💳 Payment Security
+Sensitive operations like payments are secured using HTTPS and tokenized transaction processing. Integration with secure third-party payment providers ensures compliance with financial regulations.
+
+**Why it matters:** Safeguards users' financial information and ensures trustworthy transactions.
+
+---
+
+### 🗝️ Secure Data Storage
+Passwords are hashed using secure algorithms (e.g., PBKDF2 or bcrypt), and sensitive information is encrypted when stored or transmitted.
+
+**Why it matters:** Prevents data leaks and protects user credentials in case of a breach.
+
+---
+
+By implementing these security practices, the backend ensures a safe, reliable, and trustworthy platform for users to interact with.
+
