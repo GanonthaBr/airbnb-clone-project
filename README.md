@@ -115,4 +115,28 @@ Handles payment transactions for bookings.
 - A **Booking** can have one **Payment**
 - A **User** can write multiple **Reviews** for different **Properties**
 
+## 🧩 Feature Breakdown
+
+This section outlines the main features implemented in the Airbnb Backend Clone, highlighting their purpose and contribution to the overall functionality of the platform.
+
+### 📄 API Documentation
+The backend APIs are documented using the **OpenAPI** standard, making integration with frontend clients seamless and well-structured. It also includes **GraphQL** for more efficient and flexible queries, and the **Django REST Framework** to expose RESTful endpoints for CRUD operations.
+
+### 🔐 User Authentication
+Users can register, log in, and manage their profiles through dedicated endpoints (`/users/`, `/users/{user_id}/`). Secure authentication mechanisms ensure that only authorized users can access or modify their data.
+
+### 🏠 Property Management
+Hosts can list, edit, retrieve, or delete properties through endpoints such as `/properties/` and `/properties/{property_id}/`. This feature enables users to manage their rental spaces with ease and efficiency.
+
+### 📅 Booking System
+The booking system allows users to reserve properties for specific dates via `/bookings/` and `/bookings/{booking_id}/`. It handles all operations related to check-in, check-out, and booking modifications.
+
+### 💳 Payment Processing
+Payments related to bookings are handled securely via the `/payments/` endpoint. This feature ensures that financial transactions are tracked and processed efficiently.
+
+### 📝 Review System
+Guests can post and manage reviews about properties using `/reviews/` and `/reviews/{review_id}/`. Reviews help build trust among users and improve the quality of listings on the platform.
+
+### 🚀 Database Optimizations
+To maintain performance at scale, the backend employs **indexing** for frequently queried data and **caching** to reduce server load and latency. These strategies enhance the responsiveness and reliability of the system.
 
