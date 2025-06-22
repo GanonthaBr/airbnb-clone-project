@@ -12,7 +12,7 @@ This project is a backend clone of the Airbnb platform, designed to replicate co
 - Leverage Django’s built-in admin and ORM for rapid development.
 - Store and manage relational data efficiently with PostgreSQL.
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
 - **Django** – Web framework for building robust backend systems.
 - **PostgreSQL** – Relational database for structured and reliable data storage.
