@@ -189,3 +189,24 @@ Passwords are hashed using secure algorithms (e.g., PBKDF2 or bcrypt), and sensi
 
 By implementing these security practices, the backend ensures a safe, reliable, and trustworthy platform for users to interact with.
 
+
+## 🔁 CI/CD Pipeline
+
+**Continuous Integration (CI)** and **Continuous Deployment/Delivery (CD)** are development practices that automate the process of testing, building, and deploying applications. CI/CD pipelines help maintain code quality, reduce manual errors, and enable faster, more reliable releases.
+
+### 🚀 Why CI/CD Is Important
+
+- **Automated Testing:** Ensures that new code changes do not break existing functionality.
+- **Faster Delivery:** Streamlines the release process by automating builds and deployments.
+- **Improved Collaboration:** Developers can integrate changes more frequently and confidently.
+- **Reliable Rollbacks:** Enables safer deployments and quick recovery from failed updates.
+
+### 🧰 Tools and Technologies
+
+- **GitHub Actions / GitLab CI:** Automates workflows such as testing, linting, and deployment on code pushes or pull requests.
+- **Docker:** Containerizes the application to ensure consistent environments across development, testing, and production.
+- **Heroku / AWS / Render / DigitalOcean:** Platforms for automated deployment and hosting.
+- **PostgreSQL Backups:** Schedule regular database backups as part of the pipeline.
+
+By integrating CI/CD into the development workflow, the project becomes easier to maintain, scale, and ship with confidence.
+
