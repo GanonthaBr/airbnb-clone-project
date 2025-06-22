@@ -22,18 +22,97 @@ This project is a backend clone of the Airbnb platform, designed to replicate co
 - **JWT Authentication** – Secure token-based user authentication.
 - **Celery & Redis** *(optional)* – Background task processing (e.g., email notifications).
 
-## 🚀 Getting Started
+## 🗃️ Database Design
 
-To be added...
+The project consists of several core entities to replicate Airbnb's functionality. Below is a summary of the key models and their relationships.
 
-## 📁 Folder Structure
+### 🔐 Users
+Represents individuals using the platform, either as guests or hosts.
 
-To be added...
+**Key Fields:**
+- `id`: Unique identifier
+- `username`: User’s login name
+- `email`: User’s contact email
+- `is_host`: Boolean to distinguish hosts from guests
+- `date_joined`: Timestamp of account creation
 
-## 🧪 Tests
+**Relationships:**
+- A user can list multiple properties (if a host)
+- A user can make multiple bookings
+- A user can write multiple reviews
 
-To be added...
+---
 
-## 📄 License
+### 🏠 Properties
+Represents homes or spaces listed for rent.
 
-MIT License. See `LICENSE` for more information.
+**Key Fields:**
+- `id`: Unique identifier
+- `title`: Name or short description of the property
+- `description`: Detailed property information
+- `price_per_night`: Cost to book per night
+- `owner`: Foreign key to the `User` (host)
+
+**Relationships:**
+- A property is owned by a single user (host)
+- A property can have multiple bookings
+- A property can receive multiple reviews
+
+---
+
+### 📅 Bookings
+Represents a reservation made by a guest for a property.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `guest`: Foreign key to the `User` (guest)
+- `property`: Foreign key to the `Property`
+- `start_date`: Booking start date
+- `end_date`: Booking end date
+
+**Relationships:**
+- A booking belongs to one property
+- A booking is made by one user (guest)
+
+---
+
+### 📝 Reviews
+Represents feedback from guests about properties.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `author`: Foreign key to the `User`
+- `property`: Foreign key to the `Property`
+- `rating`: Integer score (e.g., 1 to 5)
+- `comment`: Textual feedback
+
+**Relationships:**
+- A review is written by one user
+- A review is associated with one property
+
+---
+
+### 💳 Payments
+Handles payment transactions for bookings.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `booking`: Foreign key to the `Booking`
+- `amount`: Total amount paid
+- `payment_status`: Status (e.g., "completed", "pending", "failed")
+- `payment_date`: Date of transaction
+
+**Relationships:**
+- A payment is linked to one booking
+
+---
+
+### 🔄 Entity Relationships Summary
+
+- A **User** can own multiple **Properties**
+- A **User** can make multiple **Bookings**
+- A **Property** can have multiple **Bookings**
+- A **Booking** can have one **Payment**
+- A **User** can write multiple **Reviews** for different **Properties**
+
+
